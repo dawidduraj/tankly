@@ -14,18 +14,29 @@ def search():
     if request.method == "GET":
         return redirect("/")
     
-    #geocoding request
+    location = geocode(request.form.get("address"))
+    if not location:
+        return redirect("/error")
+    return f"{location['lat']} {location['lon']}"
+
+def geocode(search):
     BASE_URL = "https://nominatim.openstreetmap.org/search?"
     parameters = {
         "format": "json",
-        "q" : request.form.get("address")
+        "q" : search
         }
     response = requests.get(BASE_URL, params=parameters)
     #network error handling
     if not response.status_code == 200:
-        return redirect("/error")
+        return
+
+    #no search results
+    if len(response.json()) == 0:
+        return
     
-    return f"{response.json()}"
+    #return first result
+    return response.json()[0]
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
