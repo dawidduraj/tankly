@@ -21,8 +21,11 @@ def search():
         "q" : request.form.get("address")
         }
     response = requests.get(BASE_URL, params=parameters)
-    print(response.content)
-    return f"{response.status_code}"
+    #network error handling
+    if not response.status_code == 200:
+        return redirect("/error")
+    
+    return f"{response.json()}"
 
 if __name__ == "__main__":
     app.run(debug=True)
