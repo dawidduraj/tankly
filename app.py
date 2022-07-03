@@ -22,16 +22,16 @@ def search():
         return redirect("/error")
     
     stations = stationsearch(location,type,radius)
-    
-    return f"{location['lat']} {location['lon']}"
+
+    return str(stations)
 
 def geocode(search):
-    BASE_URL = "https://nominatim.openstreetmap.org/search?"
+    GEOCODE_BASE_URL = "https://nominatim.openstreetmap.org/search?"
     parameters = {
         "format": "json",
         "q" : search
         }
-    response = requests.get(BASE_URL, params=parameters)
+    response = requests.get(GEOCODE_BASE_URL, params=parameters)
     #network error handling
     if not response.status_code == 200:
         return
@@ -43,7 +43,20 @@ def geocode(search):
     #return first result
     return response.json()[0]
     
-def stationsearch():
-    return
+def stationsearch(location,type,radius):
+    STATIONS_BASE_URL = "https://creativecommons.tankerkoenig.de/json/list.php?"
+    API_KEY = "00000000-0000-0000-0000-000000000002"
+    parameters = {
+        "lat" : location["lat"],
+        "lng" : location["lon"],
+        "rad" : radius,
+        "type" : type,
+        "sort" : "price",
+        "apikey" : API_KEY
+    }
+    response = requests.get(STATIONS_BASE_URL, params=parameters)
+    if (not response.status_code == 200) or response.json()["ok"] == False:
+        return
+    return response.json()["stations"]
 if __name__ == "__main__":
     app.run(debug=True)
