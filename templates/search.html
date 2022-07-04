@@ -7,6 +7,7 @@
 <main>
     <h1>Tankly</h1>
     <h2>Dein Tankbegleiter</h2>
+    {% if stations %}
     <table>
         <thead>
             <tr>
@@ -20,7 +21,7 @@
             <tr>
                 <td>
                     {{station["name"]}}<br>
-                    {{station["street"] + " " + station["houseNumber"]}}  | string()<br>
+                    {{station["street"] + " " + station["houseNumber"] | string()}}<br>
                     {{station["postCode"] | string() + " " + station["place"]}}
                 </td>
                 <td>{{station["dist"] | string() + "km"}}</td>
@@ -29,5 +30,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 </main>
 {% endblock %}
