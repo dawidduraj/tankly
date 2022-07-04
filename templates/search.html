@@ -16,6 +16,7 @@
         </thead>
         <tbody>
             {% for station in stations %}
+            {% if station["price"]%}
             <tr>
                 <td>
                     {% if station["brand"] == "" %}
@@ -29,6 +30,7 @@
                 <td>{{station["dist"] | string() + "km"}}</td>
                 <td>{{station["price"] | string() + "€/L"}}</td>
             </tr>
+            {% endif %}
             {% endfor %}
         </tbody>
     </table>
