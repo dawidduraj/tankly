@@ -23,7 +23,7 @@ def search():
     
     stations = stationsearch(location,type,radius)
 
-    return str(stations)
+    return render_template("search.html",location=location,stations=stations)
 
 def geocode(search):
     GEOCODE_BASE_URL = "https://nominatim.openstreetmap.org/search?"
