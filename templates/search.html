@@ -18,7 +18,11 @@
         <tbody>
             {% for station in stations %}
             <tr>
-                <td>{{station["name"]}}</td>
+                <td>
+                    {{station["name"]}}<br>
+                    {{station["street"] + " " + station["houseNumber"]}}  | string()<br>
+                    {{station["postCode"] | string() + " " + station["place"]}}
+                </td>
                 <td>{{station["dist"] | string() + "km"}}</td>
                 <td>{{station["price"] | string() + "€/L"}}</td>
             </tr>
