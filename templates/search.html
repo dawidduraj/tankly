@@ -20,7 +20,11 @@
             {% for station in stations %}
             <tr>
                 <td>
+                    {% if station["brand"] == "" %}
                     {{station["name"]}}<br>
+                    {% else %}
+                    {{station["brand"]}}<br>
+                    {% endif %}
                     {{station["street"] + " " + station["houseNumber"] | string()}}<br>
                     {{station["postCode"] | string() + " " + station["place"]}}
                 </td>
