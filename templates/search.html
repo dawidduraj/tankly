@@ -1,10 +1,10 @@
-{% extends "template.html"%}
+{% extends "index.html"%}
 
 {% block head %}
 
 {% endblock %}
-{% block body %}
-<main>
+{% block table%}
+<div>
     <h1>Tankly</h1>
     <h2>Dein Tankbegleiter</h2>
     {% if stations %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
     {% endif %}
-</main>
+</div>
 {% endblock %}
