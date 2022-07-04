@@ -1,34 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛽</text></svg>">
-    <title>Tankly - Dein Tankbegleiter</title>
-</head>
-<body>
-    <main>
-        <h1>Tankly</h1>
-        <h2>Dein Tankbegleiter</h2>
-        <form action="/search" method="post">
-            <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required>
-            <button type="submit">🔎</button>
-            <select name="type" id="type">
-                <option value="e10">Super E10</option>
-                <option value="e5">Super E5</option>
-                <option value="diesel">Diesel</option>
-            </select>
-            <select name="radius" id="radius">
-                <option value="1">1 km</option>
-                <option value="2">2 km</option>
-                <option value="5" selected>5 km</option>
-                <option value="10">10 km</option>
-                <option value="15">15 km</option>
-                <option value="20">20 km</option>
-                <option value="25">25 km</option>
-            </select>
-        </form>
-    </main>
-</body>
-</html>
+{% extends "template.html" %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<main>
+    <h1>Tankly</h1>
+    <h2>Dein Tankbegleiter</h2>
+    <form action="/search" method="post">
+        <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required>
+        <button type="submit">🔎</button>
+        <select name="type" id="type">
+            <option value="e10">Super E10</option>
+            <option value="e5">Super E5</option>
+            <option value="diesel">Diesel</option>
+        </select>
+        <select name="radius" id="radius">
+            <option value="1">1 km</option>
+            <option value="2">2 km</option>
+            <option value="5" selected>5 km</option>
+            <option value="10">10 km</option>
+            <option value="15">15 km</option>
+            <option value="20">20 km</option>
+            <option value="25">25 km</option>
+        </select>
+    </form>
+</main>
+{% endblock %}
