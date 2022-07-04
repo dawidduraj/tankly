@@ -16,11 +16,13 @@
             </tr>
         </thead>
         <tbody>
+            {% for station in stations %}
             <tr>
-                <td>Tankstelle Musterstadt</td>
-                <td>1.1km</td>
-                <td>1.119 €/L</td>
+                <td>{{station["name"]}}</td>
+                <td>{{station["dist"] | string() + "km"}}</td>
+                <td>{{station["price"] | string() + "€/L"}}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </main>
