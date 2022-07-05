@@ -28,11 +28,13 @@ def search():
     
     stations = stationsearch(location,type,radius)
 
-    return render_template("search.html",location=location,stations=stations,radius=radius,type=type)
+    print(location)
+    return render_template("search.html",address=location["address"],stations=stations,radius=radius,type=type)
 
 def geocode(search):
     parameters = {
         "format": "json",
+        "addressdetails": "1",
         "q" : search
         }
     response = requests.get(GEOCODE_BASE_URL, params=parameters)

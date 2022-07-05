@@ -8,7 +8,7 @@
     <h1>Tankly</h1>
     <h2>Dein Tankbegleiter</h2>
     <form action="/search" method="post">
-        <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required >
+        <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required {% if address %} value="{{address['road']}} {{address['house_number']}}, {{address['postcode']}} {{address['city']}}" {% endif %}>
         <button type="submit">🔎</button>
         <select name="type" id="type">
             <option value="e10" {% if type == "e10" %}selected{% endif %}>Super E10</option>
