@@ -5,8 +5,6 @@ from flask import Flask, redirect, render_template, request
 STATIONS_BASE_URL = "https://creativecommons.tankerkoenig.de/json/list.php?"
 API_KEY = "00000000-0000-0000-0000-000000000002"
 GEOCODE_BASE_URL = "https://nominatim.openstreetmap.org/search?"
-SUPPORTED_TYPES =  {"e10", "e5", "diesel"}
-RADIUS_OPTIONS = {"1","2","5","10","15","20","25"}
 
 #config
 app = Flask(__name__)
