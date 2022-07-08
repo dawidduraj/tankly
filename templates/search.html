@@ -20,9 +20,9 @@
             <tr>
                 <td>
                     {% if station["brand"] == "" %}
-                    {{station["name"]}}<br>
+                    <b>{{station["name"]}}</b><br>
                     {% else %}
-                    {{station["brand"]}}<br>
+                    <b>{{station["brand"]}}</b><br>
                     {% endif %}
                     {{station["street"]| capitalize + " " + station["houseNumber"] | string()}}<br>
                     {{station["postCode"] | string() + " " + station["place"]|capitalize}}
