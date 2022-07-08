@@ -24,8 +24,8 @@
                     {% else %}
                     {{station["brand"]}}<br>
                     {% endif %}
-                    {{station["street"] + " " + station["houseNumber"] | string()}}<br>
-                    {{station["postCode"] | string() + " " + station["place"]}}
+                    {{station["street"]| capitalize + " " + station["houseNumber"] | string()}}<br>
+                    {{station["postCode"] | string() + " " + station["place"]|capitalize}}
                 </td>
                 <td>{{station["dist"] | string() + "km"}}</td>
                 <td>{{station["price"] | string() + "€/L"}}</td>
