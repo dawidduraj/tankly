@@ -5,7 +5,7 @@
 {% endblock %}
 {% block body %}
 <main>
-    <h1>Tankly</h1>
+    <h1><a href="{{ url_for('index') }}"">Tankly</a></h1>
     <h2>Dein Tankbegleiter</h2>
     <form action="/search" method="post">
         <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required {% if address %} value="{{address['road']}} {{address['house_number']}}, {{address['postcode']}} {{address['city']}}" {% endif %}>
