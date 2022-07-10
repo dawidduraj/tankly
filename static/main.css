@@ -47,8 +47,36 @@ a{
 
 a:hover{
     transform: scale(1.1);
+    color: orangered;
 }
 
 h2{
     margin-bottom: 10px;
+}
+
+.searchbar{
+    display: flex;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    border-bottom: 2px solid gray;
+}
+
+input{
+    flex-grow: 1;
+    padding: 10px 0px;
+
+
+}
+input, button{
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    margin: auto;
+}
+.searchbar:focus-within{
+    border-bottom: 2px solid orangered;
+    transform: scale(1.05);
 }

@@ -8,8 +8,10 @@
     <h1><a href="{{ url_for('index') }}"">Tankly</a></h1>
     <h2>Dein Tankbegleiter</h2>
     <form action="/search" method="post">
-        <input type="text" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required {% if address %} value="{{address['road']}} {{address['house_number']}} {{address['postcode']}} {{address['city']}}" {% endif %}>
-        <button type="submit">🔎</button>
+        <div class="searchbar">
+            <input type="search" autocomplete="off" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required {% if address %} value="{{address['road']}} {{address['house_number']}} {{address['postcode']}} {{address['city']}}" {% endif %}>
+            <button type="submit">&#x1F50E;&#xFE0E;</button>
+        </div>
         <select name="type" id="type">
             <option value="e10" {% if type == "e10" %}selected{% endif %}>Super E10</option>
             <option value="e5"{% if type == "e5" %}selected{% endif %}>Super E5</option>
