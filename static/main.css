@@ -26,3 +26,16 @@ main{
     background-color: rgba(21, 21, 21, 0.9);
     padding: 50px;
 }
+
+h1{
+    font-weight: 700;
+}
+
+h2{
+    font-weight: 600;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
