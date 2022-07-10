@@ -3,7 +3,7 @@ from flask import Flask, redirect, render_template, request
 
 #constants
 STATIONS_BASE_URL = "https://creativecommons.tankerkoenig.de/json/list.php?"
-API_KEY = "00000000-0000-0000-0000-000000000002"
+API_KEY = "df905214-1612-2644-13c6-0d734ed17fd7"
 GEOCODE_BASE_URL = "https://nominatim.openstreetmap.org/search?"
 
 #config
