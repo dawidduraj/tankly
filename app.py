@@ -22,14 +22,15 @@ def search():
     location = geocode(request.form.get("address"))
     type = request.form.get("type")
     radius = request.form.get("radius")
+    sort = request.form.get("sort")
 
     if not location:
         return render_template("index.html", error=True)
     
-    stations = stationsearch(location,type,radius)
+    stations = stationsearch(location,type,radius,sort)
 
     print(location)
-    return render_template("search.html",address=location["address"],stations=stations,radius=radius,type=type)
+    return render_template("search.html",address=location["address"],stations=stations,radius=radius,type=type,sort=sort)
 
 def geocode(search):
     parameters = {
@@ -49,13 +50,13 @@ def geocode(search):
     #return first result
     return response.json()[0]
     
-def stationsearch(location,type,radius):
+def stationsearch(location,type,radius,sort):
     parameters = {
         "lat" : location["lat"],
         "lng" : location["lon"],
         "rad" : radius,
         "type" : type,
-        "sort" : "price",
+        "sort" : sort,
         "apikey" : API_KEY
     }
     response = requests.get(STATIONS_BASE_URL, params=parameters)

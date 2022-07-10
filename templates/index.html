@@ -28,6 +28,10 @@
                 <option value="20" {% if radius == "20" %}selected{% endif %}>20 km</option>
                 <option value="25" {% if radius == "25" %}selected{% endif %}>25 km</option>
             </select>
+            <select name="sort" id="sort">
+                <option value="price" {% if sort == "price" %}selected{% endif %}>Preis</option>
+                <option value="dist"{% if sort == "dist" %}selected{% endif %}>Entfernung</option>
+            </select>
         </div>
     </form>
     {% if error %}
