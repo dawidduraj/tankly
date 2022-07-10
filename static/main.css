@@ -10,23 +10,27 @@ html,body{
     color: white;
 }
 
-body{
+body, .wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+body{
+
     background: rgba(0, 0, 0, .65) url('/static/bg.jpg') no-repeat center center fixed;
     background-blend-mode: darken;
     background-size: cover;
 }
-
-
+.wrapper{
+    flex-grow: 1;
+}
 main{
     border-radius: 8px;
     background-color: rgba(21, 21, 21, 0.9);
     padding: 50px;
     margin: 50px;
-    width: 80%;
+    width: 80vw;
     max-width: 650px;
 }
 
@@ -98,4 +102,21 @@ select{
 table{
     width: 100%;
     border-spacing: 0 1em;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    background-color: rgba(21, 21, 21, 0.9);
+    justify-self: flex-end;
+}
+
+footer a{
+    font-weight: bold;
+}
+
+footer a:hover{
+    transform: none;
+    text-decoration: underline;
 }

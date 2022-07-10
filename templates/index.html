@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 {% endblock %}
 {% block body %}
+<div class="wrapper">
 <main>
     <h1><a href="{{ url_for('index') }}"">Tankly</a></h1>
     <h2>Dein Tankbegleiter</h2>
@@ -35,4 +36,8 @@
     {% block table %}
     {% endblock %}
 </main>
+</div>
+<footer>
+    Made with ❤️ by <a href="https://github.com/dawidduraj">Dawid Duraj</a>
+</footer>
 {% endblock %}
