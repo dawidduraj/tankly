@@ -48,3 +48,7 @@ a{
 a:hover{
     transform: scale(1.1);
 }
+
+h2{
+    margin-bottom: 10px;
+}
