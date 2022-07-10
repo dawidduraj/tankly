@@ -24,7 +24,7 @@ def search():
     radius = request.form.get("radius")
 
     if not location:
-        return redirect("/error")
+        return render_template("index.html", error=True)
     
     stations = stationsearch(location,type,radius)
 
