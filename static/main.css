@@ -25,6 +25,9 @@ main{
     border-radius: 8px;
     background-color: rgba(21, 21, 21, 0.9);
     padding: 50px;
+    margin: 50px;
+    width: 80%;
+    max-width: 650px;
 }
 
 h1{
