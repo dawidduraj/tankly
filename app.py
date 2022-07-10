@@ -64,4 +64,4 @@ def stationsearch(location,type,radius,sort):
         return
     return response.json()["stations"]
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
