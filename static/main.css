@@ -41,4 +41,10 @@ h2{
 a{
     color: white;
     text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+a:hover{
+    transform: scale(1.1);
 }
