@@ -90,3 +90,12 @@ select{
     border-radius: 4px;
     padding: 5px;
 }
+
+.options{
+    margin-bottom: 10px;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0 1em;
+}

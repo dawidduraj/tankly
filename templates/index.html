@@ -12,20 +12,22 @@
             <input type="search" autocomplete="off" name="address" placeholder="Musterstr. 78, 48565 Musterstadt..." required {% if address %} value="{{address['road']}} {{address['house_number']}} {{address['postcode']}} {{address['city']}}" {% endif %}>
             <button type="submit">&#x1F50E;&#xFE0E;</button>
         </div>
-        <select name="type" id="type">
-            <option value="e10" {% if type == "e10" %}selected{% endif %}>Super E10</option>
-            <option value="e5"{% if type == "e5" %}selected{% endif %}>Super E5</option>
-            <option value="diesel" {% if type == "diesel" %}selected{% endif %}>Diesel</option>
-        </select>
-        <select name="radius" id="radius">
-            <option value="1" {% if radius == "1" %}selected{% endif %}>1 km</option>
-            <option value="2" {% if radius == "2" %}selected{% endif %}>2 km</option>
-            <option value="5" {% if radius == "5" %}selected{% endif %}>5 km</option>
-            <option value="10" {% if radius == "10" %}selected{% endif %}>10 km</option>
-            <option value="15" {% if radius == "15" %}selected{% endif %}>15 km</option>
-            <option value="20" {% if radius == "20" %}selected{% endif %}>20 km</option>
-            <option value="25" {% if radius == "25" %}selected{% endif %}>25 km</option>
-        </select>
+        <div class="options">
+            <select name="type" id="type">
+                <option value="e10" {% if type == "e10" %}selected{% endif %}>Super E10</option>
+                <option value="e5"{% if type == "e5" %}selected{% endif %}>Super E5</option>
+                <option value="diesel" {% if type == "diesel" %}selected{% endif %}>Diesel</option>
+            </select>
+            <select name="radius" id="radius">
+                <option value="1" {% if radius == "1" %}selected{% endif %}>1 km</option>
+                <option value="2" {% if radius == "2" %}selected{% endif %}>2 km</option>
+                <option value="5" {% if radius == "5" %}selected{% endif %}>5 km</option>
+                <option value="10" {% if radius == "10" %}selected{% endif %}>10 km</option>
+                <option value="15" {% if radius == "15" %}selected{% endif %}>15 km</option>
+                <option value="20" {% if radius == "20" %}selected{% endif %}>20 km</option>
+                <option value="25" {% if radius == "25" %}selected{% endif %}>25 km</option>
+            </select>
+        </div>
     </form>
     {% block table %}
     {% endblock %}
