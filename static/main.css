@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     margin: 0;
@@ -11,11 +18,19 @@ html,body{
 }
 
 body, .wrapper{
-    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 body{
 
@@ -24,7 +39,9 @@ body{
     background-size: cover;
 }
 .wrapper{
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 main{
     border-radius: 8px;
@@ -46,12 +63,16 @@ h2{
 a{
     color: white;
     text-decoration: none;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     display: inline-block;
 }
 
 a:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     color: orangered;
 }
 
@@ -60,14 +81,20 @@ h2{
 }
 
 .searchbar{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     margin-bottom: 10px;
     border-bottom: 2px solid gray;
 }
 
 input{
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 10px 0px;
 
 
@@ -86,7 +113,9 @@ input, button, select{
 }
 .searchbar:focus-within{
     border-bottom: 2px solid orangered;
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 option{
     background-color: rgba(21, 21, 21, 0.9);
@@ -118,7 +147,9 @@ footer a{
 }
 
 footer a:hover{
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     text-decoration: underline;
 }
 
