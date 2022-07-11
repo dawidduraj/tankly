@@ -16,7 +16,9 @@ html,body{
     min-height: 100vh;
     color: white;
 }
-
+html,body, .wrapper, main{
+    max-width: 100vw;
+}
 body, .wrapper{
     display: -webkit-box;
     display: -ms-flexbox;
