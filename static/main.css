@@ -33,7 +33,7 @@ body, .wrapper{
             align-items: center;
 }
 body{
-    background-color: rgba(21, 21, 21);
+
     background: rgba(0, 0, 0, .65) url('/static/bg.jpg') no-repeat center center fixed;
     background-blend-mode: darken;
     background-size: cover;
